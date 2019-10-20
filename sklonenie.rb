@@ -5,9 +5,11 @@ def sklonenie(number, krokodil, krokodila, krokodilov)
   if (number == nil || !number.is_a?(Numeric))
     number = 0
   end
-
   ostatok = number % 10
 
+  if number % 100 >= 11 && number % 100<= 14
+    return krokodilov
+  end
   if ostatok == 1
     return krokodil
   elsif ostatok >=2 && ostatok <=4
@@ -16,7 +18,8 @@ def sklonenie(number, krokodil, krokodila, krokodilov)
     return krokodilov
   end
 end
-
+i = 0
+while i < 50 do
 skolko = ARGV[0]
 #если не был передан параметр спрашиваем
 # у пользователя количество
@@ -34,3 +37,4 @@ puts "#{skolko} " +
   sklonenie(skolko,"кот","кота","котов") +
     sklonenie(skolko," пошел"," пошли"," пошли") +
     " купаться в море!"
+end
